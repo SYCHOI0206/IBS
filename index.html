@@ -1,8 +1,17 @@
 <!doctype html>
 <html lang="ko" data-theme="light">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827">
-<title>IBS 운용 도우미 v4.3</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<meta name="description" content="IBS 기본형과 추세형의 매수·매도 신호, 사이클, 자산과 낙폭을 기록하는 설치형 웹앱입니다.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IBS 도우미">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+<title>IBS 운용 도우미 v5.0</title>
 <style>
 :root{
   --bg:#f3f6fb;--surface:#ffffff;--surface-2:#f8fafc;--surface-3:#eef2f7;
@@ -30,7 +39,7 @@ button,input,select{font:inherit}.app{max-width:1120px;margin:auto;padding:0 16p
   background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:950;box-shadow:0 8px 20px rgba(37,99,235,.24)}
 .title{font-size:21px;font-weight:950;letter-spacing:-.5px}.sub{font-size:12px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .version{font-size:10px;padding:3px 7px;border-radius:999px;background:var(--surface-3);color:var(--muted);vertical-align:2px}
-.header-actions{display:flex;align-items:center;gap:8px}.icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--text);cursor:pointer;font-weight:900}
+.header-actions{display:flex;align-items:center;gap:8px}.install-app-btn{min-height:40px;padding:8px 12px;border-radius:13px;white-space:nowrap}.icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--text);cursor:pointer;font-weight:900}
 .pill{padding:9px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:12px;font-weight:900;white-space:nowrap;box-shadow:0 4px 16px rgba(15,23,42,.05)}
 .section{display:none}.section.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin:4px 2px 14px}.section-head h2{margin:0;font-size:22px;letter-spacing:-.5px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
@@ -67,13 +76,13 @@ details.rules{align-self:start}details.rules summary{cursor:pointer;font-weight:
 .toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 18px);transform:translate(-50%,20px);z-index:100;opacity:0;pointer-events:none;min-width:220px;max-width:calc(100vw - 30px);padding:12px 15px;border-radius:14px;background:#111827;color:#fff;font-size:12px;font-weight:850;box-shadow:0 14px 35px rgba(0,0,0,.25);transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.toast.success{background:#065f46}.toast.error{background:#991b1b}.toast.warn{background:#92400e}
 .hidden{display:none!important}
 @media(max-width:850px){.metric-grid{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:1fr}.stat-strip{grid-template-columns:repeat(3,1fr)}.modal-summary{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.app{padding-left:10px;padding-right:10px}.app-header{margin-left:-10px;margin-right:-10px}.title{font-size:18px}.sub{max-width:210px}.pill{display:none}.grid{grid-template-columns:1fr}.metric-grid{gap:8px}.metric-card{padding:13px}.metric-card .metric{font-size:18px}.signal{grid-template-columns:auto 1fr;padding:17px}.signal .btn{grid-column:1/-1}.two{grid-template-columns:1fr 1fr}.quick-paste{grid-template-columns:1fr 1fr}.quick-paste .field{grid-column:1/-1}.slots{grid-template-columns:repeat(2,1fr)}.stat-strip{grid-template-columns:repeat(2,1fr)}.help-grid{grid-template-columns:1fr}.modal{padding:8px}.modal-panel{border-radius:22px 22px 0 0;max-height:92vh}.mini-trade,.modal-trades>div{grid-template-columns:auto 75px 1fr}.header-actions{gap:5px}.icon-btn{width:38px;height:38px}.nav button{font-size:9px}.context-strip{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters select{flex:1;min-width:0}.chart{height:250px}}
+@media(max-width:620px){.app{padding-left:10px;padding-right:10px}.app-header{margin-left:-10px;margin-right:-10px}.title{font-size:18px}.sub{max-width:210px}.pill{display:none}.grid{grid-template-columns:1fr}.metric-grid{gap:8px}.metric-card{padding:13px}.metric-card .metric{font-size:18px}.signal{grid-template-columns:auto 1fr;padding:17px}.signal .btn{grid-column:1/-1}.two{grid-template-columns:1fr 1fr}.quick-paste{grid-template-columns:1fr 1fr}.quick-paste .field{grid-column:1/-1}.slots{grid-template-columns:repeat(2,1fr)}.stat-strip{grid-template-columns:repeat(2,1fr)}.help-grid{grid-template-columns:1fr}.modal{padding:8px}.modal-panel{border-radius:22px 22px 0 0;max-height:92vh}.mini-trade,.modal-trades>div{grid-template-columns:auto 75px 1fr}.header-actions{gap:5px}.install-app-btn{padding:8px 10px;font-size:11px}.icon-btn{width:38px;height:38px}.nav button{font-size:9px}.context-strip{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters select{flex:1;min-width:0}.chart{height:250px}}
 </style>
 </head><body>
 <div class="app">
 <header class="app-header"><div class="header-inner">
-  <div class="brand"><div class="brand-mark">IBS</div><div><div class="title">IBS 운용 도우미 <span class="version">v4.3</span></div><div class="sub">기본형과 추세형을 한 화면에서 기록하고 관리합니다.</div></div></div>
-  <div class="header-actions"><button id="helpBtn" class="icon-btn" aria-label="도움말">?</button><button id="themeToggle" class="icon-btn" aria-label="테마 변경">☾</button><div class="pill" id="modePill">대기</div></div>
+  <div class="brand"><div class="brand-mark">IBS</div><div><div class="title">IBS 운용 도우미 <span class="version">v5.0 PWA</span></div><div class="sub">기본형과 추세형을 한 화면에서 기록하고 관리합니다.</div></div></div>
+  <div class="header-actions"><button id="installAppBtn" class="btn blue compact install-app-btn hidden" type="button">앱 설치</button><button id="helpBtn" class="icon-btn" aria-label="도움말">?</button><button id="themeToggle" class="icon-btn" aria-label="테마 변경">☾</button><div class="pill" id="modePill">대기</div></div>
 </div></header>
 
 <section id="home" class="section active">
@@ -203,7 +212,7 @@ let pending=null;
 
 function fresh(){
   return{
-    v:4.3,symbol:'SOXL',currency:'KRW',initialCash:10000000,
+    v:5.0,symbol:'SOXL',currency:'KRW',initialCash:10000000,
     cash:10000000,shares:0,avgPrice:0,lastClose:0,
     selectedMode:'basic',currentMode:'',selectedPlan:'',currentPlan:'',
     cycleStartEquity:0,cycleStartDate:null,slotIndex:0,maxSlot:0,
@@ -218,7 +227,7 @@ function hydrate(raw){
   const base=fresh();
   const r=raw&&typeof raw==='object'?raw:{};
   const s=Object.assign(base,r);
-  s.v=4.3;
+  s.v=5.0;
   s.selectedMode=STRATEGY[s.selectedMode]?s.selectedMode:'basic';
   s.currentMode=STRATEGY[s.currentMode]?s.currentMode:(s.shares>0?'basic':'');
   if(!s.selectedPlan){
@@ -1010,7 +1019,7 @@ $('init').onclick=()=>{
   if(initialCash<=0)return alert('초기 현금은 0보다 커야 합니다.');
   S=fresh();S.symbol=symbol;S.currency=currency;S.initialCash=initialCash;S.cash=initialCash;save();render();tab('home');
 };
-$('backup').onclick=()=>dl('IBS_multimode_v4_3_backup_'+today()+'.json',JSON.stringify(S,null,2),'application/json');
+$('backup').onclick=()=>dl('IBS_multimode_v5_0_backup_'+today()+'.json',JSON.stringify(S,null,2),'application/json');
 $('restore').onchange=e=>{
   const f=e.target.files[0];if(!f)return;const r=new FileReader();
   r.onload=()=>{try{const restored=JSON.parse(r.result);if(!restored||Number(restored.v)<3)return alert('지원하지 않는 백업 파일입니다. v3 이상 백업만 복원할 수 있습니다.');S=hydrate(restored);save();render();alert('복원했습니다.');}catch(x){alert('백업 파일을 확인하세요.');}};r.readAsText(f);
@@ -1018,6 +1027,53 @@ $('restore').onchange=e=>{
 $('reset').onclick=()=>{if(confirm('모든 기록을 삭제할까요?')){const cfg={symbol:S.symbol,currency:S.currency,initialCash:S.initialCash};S=fresh();Object.assign(S,cfg,{cash:cfg.initialCash});save();render();}};
 $('exportTrades').onclick=()=>dl('IBS_multimode_trades.csv',csv(S.trades,['cycleNo','date','side','ibs','slot','qty','price','amount','mode','plan']),'text/csv');
 $('exportDaily').onclick=()=>dl('IBS_multimode_daily.csv',csv(S.daily,['date','open','high','low','close','ibs','signal','tradeSide','cash','shares','avgPrice','equity','slotIndex','mode','plan','cycleTrend','marketAnchor','breakoutLine','trendActive','trendActiveLeft','trendBelowCount','cycleNo']),'text/csv');
+
 window.addEventListener('resize',()=>{if($('assets').classList.contains('active')||$('current').classList.contains('active'))drawAll();});
+
+/* PWA install and offline support */
+let deferredInstallPrompt=null;
+const installAppBtn=$('installAppBtn');
+function isStandaloneApp(){
+  return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+}
+function refreshInstallButton(){
+  if(!installAppBtn)return;
+  installAppBtn.classList.toggle('hidden',isStandaloneApp()||!deferredInstallPrompt);
+}
+window.addEventListener('beforeinstallprompt',event=>{
+  event.preventDefault();
+  deferredInstallPrompt=event;
+  refreshInstallButton();
+});
+window.addEventListener('appinstalled',()=>{
+  deferredInstallPrompt=null;
+  refreshInstallButton();
+  toast('IBS 운용 도우미가 앱으로 설치되었습니다.','success');
+});
+if(installAppBtn){
+  installAppBtn.addEventListener('click',async()=>{
+    if(isStandaloneApp())return toast('이미 앱으로 실행 중입니다.','success');
+    if(!deferredInstallPrompt){
+      return alert('설치 준비가 아직 끝나지 않았습니다. 페이지를 한 번 새로고침한 뒤 다시 누르세요. 그래도 표시되지 않으면 Chrome 메뉴의 “앱 설치”를 확인하세요.');
+    }
+    deferredInstallPrompt.prompt();
+    const choice=await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt=null;
+    refreshInstallButton();
+    if(choice.outcome==='accepted')toast('앱 설치를 진행합니다.','success');
+  });
+}
+if('serviceWorker' in navigator){
+  window.addEventListener('load',async()=>{
+    try{
+      const registration=await navigator.serviceWorker.register('./service-worker.js',{scope:'./'});
+      registration.update();
+    }catch(error){
+      console.error('Service worker registration failed:',error);
+    }
+  });
+}
+window.matchMedia('(display-mode: standalone)').addEventListener?.('change',refreshInstallButton);
+refreshInstallButton();
 render();
 </script></body></html>
