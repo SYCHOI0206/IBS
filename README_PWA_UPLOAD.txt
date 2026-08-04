@@ -1,9 +1,42 @@
-IBS 운용 도우미 v5.0 PWA 설치형
+IBS 운용 도우미 v5.1 PWA
 
-이 폴더의 모든 파일을 GitHub 저장소 IBS의 최상단(root)에 업로드하세요.
-기존 index.html은 새 index.html로 교체합니다.
+핵심 변경사항
+1. 거래기록 수정
+- 매수와 쿼터매도: 수량과 체결단가 수정 가능
+- 전량매도: 전략상 당시 전 보유수량을 매도하므로 체결단가만 수정 가능
+- 수정 저장 시 해당 거래 이후의 현금, 보유수량, 평균단가, 사이클 손익, 평가자산, MDD, 그래프를 전체 재계산
+- 잘못 수정했을 때 '최근 수정 되돌리기'로 직전 상태 복원
 
-필수 파일
+2. 과거 SOXL OHLC 화면
+- 기록 탭에서 최근 30일, 60일, 120일 또는 전체 기간 선택
+- OHLC 캔들차트, 기간 최고/최저, 최근 종가 표시
+- 날짜 검색과 20개 단위 페이지 표 제공
+- 일별 IBS 구간과 실제 거래 여부 함께 표시
+- 시장 CSV 내보내기 지원
+
+3. 과거 OHLC 보강
+- 설정에서 Date, Open, High, Low, Close 열이 있는 CSV 등록
+- 거래를 이미 시작했어도 최초 일별 기록일보다 이전 날짜는 과거 시장데이터로 추가 가능
+- 과거 데이터는 거래·자산 원장과 분리해 보관하며 추세판정과 OHLC 화면에 사용
+- 최대 5,000개 거래일 보관
+- 직접 입력한 일별·거래 기록은 그대로 유지
+
+중요한 동작
+- 거래 수정은 실제 체결기록을 바로잡는 기능입니다. 전략신호 자체를 과거로 돌아가 새로 만들지는 않습니다.
+- 매수수량을 줄여 이후 쿼터매도 수량이 당시 보유량을 초과하게 되면 수정이 거부됩니다.
+- 이전 매수수량을 수정하면 뒤의 전량매도 수량은 당시 남은 전 보유수량으로 자동 보정됩니다.
+- OHLC CSV로 보강한 과거 데이터는 계좌자산 그래프가 아니라 시장가격 차트와 30일 추세판정에 사용됩니다.
+
+GitHub 업데이트 방법
+1. 기존 앱에서 설정 > JSON 백업
+2. 이 폴더의 파일을 GitHub IBS 저장소 최상단에 모두 업로드
+3. 같은 이름의 index.html, manifest.webmanifest, service-worker.js는 새 버전으로 교체
+4. ui_preview_v51_mobile.png와 ui_preview_v51_desktop.png도 함께 업로드
+5. Commit changes
+6. GitHub Pages 배포 후 폰 앱을 완전히 종료하고 다시 실행
+7. 화면에 v5.1 PWA가 보이지 않으면 Chrome에서 페이지 새로고침 후 앱 재실행
+
+필수 업로드 파일
 - index.html
 - manifest.webmanifest
 - service-worker.js
@@ -13,25 +46,10 @@ IBS 운용 도우미 v5.0 PWA 설치형
 - icon-maskable-512.png
 - apple-touch-icon.png
 - favicon-32.png
+- ui_preview_v51_mobile.png
+- ui_preview_v51_desktop.png
 
-선택 파일(설치 화면 미리보기)
-- ui_preview_v43_mobile.png
-- ui_preview_v43_desktop.png
-
-GitHub 업로드 순서
-1. ZIP을 PC에서 압축 해제합니다.
-2. GitHub의 IBS 저장소를 엽니다.
-3. Add file > Upload files를 누릅니다.
-4. 압축을 푼 폴더 안의 파일을 모두 선택해 업로드합니다.
-5. index.html 교체 확인 후 Commit changes를 누릅니다.
-6. Settings > Pages에서 배포가 끝날 때까지 기다립니다.
-7. https://sychoi0206.github.io/IBS/ 를 Android Chrome에서 엽니다.
-8. 페이지를 한 번 새로고침합니다.
-9. 상단의 '앱 설치' 버튼 또는 Chrome 메뉴 > 앱 설치를 누릅니다.
-
-중요
-- 실제 운용기록은 GitHub가 아니라 폰 Chrome의 localStorage에 저장됩니다.
-- 기존 v4.3과 동일한 저장 키를 유지하므로 같은 주소와 같은 Chrome 프로필에서는 기록이 이어집니다.
-- 업데이트 전 계산기 설정에서 JSON 백업을 권장합니다.
-- 설치 버튼이 바로 보이지 않으면 배포 후 1~3분 기다린 다음 Chrome에서 페이지를 새로고침하세요.
-- 이전 서비스워커가 남아 있으면 Chrome > 사이트 설정 > 저장공간에서 해당 사이트 데이터를 지운 뒤 다시 접속할 수 있습니다. 이 경우 기록도 지워질 수 있으므로 반드시 먼저 JSON 백업하세요.
+저장 호환성
+- 기존 localStorage 키 ibs2575_complete_v3 유지
+- v3.x, v4.x, v5.0 JSON 백업 복원 가능
+- 앱 업데이트 전 JSON 백업 권장

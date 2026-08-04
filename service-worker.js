@@ -1,4 +1,4 @@
-const CACHE_NAME='ibs-pwa-v5.0.1';
+const CACHE_NAME='ibs-pwa-v5.1.0';
 const APP_SHELL=[
   './',
   './index.html',
@@ -9,8 +9,8 @@ const APP_SHELL=[
   './icon-maskable-512.png',
   './apple-touch-icon.png',
   './favicon-32.png',
-  './ui_preview_v43_mobile.png',
-  './ui_preview_v43_desktop.png'
+  './ui_preview_v51_mobile.png',
+  './ui_preview_v51_desktop.png'
 ];
 
 self.addEventListener('install',event=>{
