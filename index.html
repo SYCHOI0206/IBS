@@ -11,7 +11,7 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-<title>IBS 운용 도우미 v5.1</title>
+<title>IBS 운용 도우미 v5.2</title>
 <style>
 :root{
   --bg:#f3f6fb;--surface:#ffffff;--surface-2:#f8fafc;--surface-3:#eef2f7;
@@ -77,15 +77,16 @@ details.rules{align-self:start}details.rules summary{cursor:pointer;font-weight:
 .trade-actions{display:flex;justify-content:flex-end;gap:6px}.trade-actions .btn{min-height:32px;padding:5px 9px;border-radius:10px;font-size:11px;min-width:auto}.edit-note{padding:11px 12px;border-radius:13px;background:var(--amber-soft);border:1px solid color-mix(in srgb,var(--amber) 25%,var(--line));font-size:12px;color:var(--muted);line-height:1.6}.edit-note b{color:var(--text)}
 .market-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.market-toolbar select,.market-toolbar input{width:auto;min-height:38px;padding:7px 10px;font-size:12px}.market-toolbar input{min-width:150px}.market-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:12px 0}.market-summary>div{padding:11px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}.market-summary small{display:block;color:var(--muted);font-size:10px}.market-summary b{display:block;margin-top:4px;font-size:13px}.market-chart{height:320px}.market-pager{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px}.market-pager span{min-width:90px;text-align:center;font-size:12px;color:var(--muted);font-weight:850}.market-empty{padding:28px;text-align:center;color:var(--muted)}.market-table td,.market-table th{text-align:right}.market-table td:first-child,.market-table th:first-child{text-align:left}.market-table .trade-cell{text-align:center}.small-muted{font-size:11px;color:var(--muted)}
 .edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.edit-static{padding:11px 12px;border-radius:13px;background:var(--surface-2);border:1px solid var(--line)}.edit-static small{display:block;color:var(--muted);font-size:10px}.edit-static b{display:block;margin-top:4px}.edit-total{font-size:22px;font-weight:950;text-align:right}.undo-edit-row{display:flex;justify-content:flex-end;margin-top:10px}
+.manual-callout{margin-top:14px;padding:13px 14px;border:1px solid color-mix(in srgb,var(--brand) 20%,var(--line));border-radius:15px;background:color-mix(in srgb,var(--brand) 6%,var(--surface));font-size:12px;line-height:1.65;color:var(--muted)}.manual-callout b{color:var(--text)}.manual-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:12px 0}.manual-summary>div{padding:11px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}.manual-summary small{display:block;font-size:10px;color:var(--muted)}.manual-summary b{display:block;margin-top:4px}.source-pill{display:inline-flex;padding:3px 6px;border-radius:999px;font-size:9px;font-weight:950;margin-left:4px;vertical-align:1px}.source-pill.auto{background:var(--surface-3);color:var(--muted)}.source-pill.manual{background:color-mix(in srgb,var(--purple) 13%,var(--surface));color:var(--purple)}.source-pill.carry{background:var(--amber-soft);color:var(--amber)}.missed-notice{margin:-4px 0 14px;border-color:color-mix(in srgb,var(--amber) 28%,var(--line));background:var(--amber-soft)}.missed-notice strong{color:var(--amber)}.table-scroll-hint{display:none;margin:7px 3px 0;font-size:10px;color:var(--muted)}.market-table th:first-child,.market-table td:first-child{position:sticky;left:0;background:var(--surface);z-index:2}.market-table th:first-child{background:var(--surface-2);z-index:4}.market-table th:last-child,.market-table td:last-child{position:sticky;right:0;background:var(--surface);z-index:2}.market-table th:last-child{background:var(--surface-2);z-index:4}.market-table td:last-child{box-shadow:-8px 0 12px -12px rgba(15,23,42,.35)}
 .toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 18px);transform:translate(-50%,20px);z-index:100;opacity:0;pointer-events:none;min-width:220px;max-width:calc(100vw - 30px);padding:12px 15px;border-radius:14px;background:#111827;color:#fff;font-size:12px;font-weight:850;box-shadow:0 14px 35px rgba(0,0,0,.25);transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.toast.success{background:#065f46}.toast.error{background:#991b1b}.toast.warn{background:#92400e}
 .hidden{display:none!important}
 @media(max-width:850px){.market-summary{grid-template-columns:repeat(3,1fr)}.metric-grid{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:1fr}.stat-strip{grid-template-columns:repeat(3,1fr)}.modal-summary{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.market-summary{grid-template-columns:repeat(2,1fr)}.market-toolbar{align-items:stretch}.market-toolbar select,.market-toolbar input{width:100%}.edit-grid{grid-template-columns:1fr}.trade-actions{justify-content:flex-start}.app{padding-left:10px;padding-right:10px}.app-header{margin-left:-10px;margin-right:-10px}.title{font-size:18px}.sub{max-width:210px}.pill{display:none}.grid{grid-template-columns:1fr}.metric-grid{gap:8px}.metric-card{padding:13px}.metric-card .metric{font-size:18px}.signal{grid-template-columns:auto 1fr;padding:17px}.signal .btn{grid-column:1/-1}.two{grid-template-columns:1fr 1fr}.quick-paste{grid-template-columns:1fr 1fr}.quick-paste .field{grid-column:1/-1}.slots{grid-template-columns:repeat(2,1fr)}.stat-strip{grid-template-columns:repeat(2,1fr)}.help-grid{grid-template-columns:1fr}.modal{padding:8px}.modal-panel{border-radius:22px 22px 0 0;max-height:92vh}.mini-trade,.modal-trades>div{grid-template-columns:auto 75px 1fr}.header-actions{gap:5px}.install-app-btn{padding:8px 10px;font-size:11px}.icon-btn{width:38px;height:38px}.nav button{font-size:9px}.context-strip{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters select{flex:1;min-width:0}.chart{height:250px}}
+@media(max-width:620px){.manual-summary{grid-template-columns:1fr 1fr}.table-scroll-hint{display:block}.market-summary{grid-template-columns:repeat(2,1fr)}.market-toolbar{align-items:stretch}.market-toolbar select,.market-toolbar input{width:100%}.edit-grid{grid-template-columns:1fr}.trade-actions{justify-content:flex-start}.app{padding-left:10px;padding-right:10px}.app-header{margin-left:-10px;margin-right:-10px}.title{font-size:18px}.sub{max-width:210px}.pill{display:none}.grid{grid-template-columns:1fr}.metric-grid{gap:8px}.metric-card{padding:13px}.metric-card .metric{font-size:18px}.signal{grid-template-columns:auto 1fr;padding:17px}.signal .btn{grid-column:1/-1}.two{grid-template-columns:1fr 1fr}.quick-paste{grid-template-columns:1fr 1fr}.quick-paste .field{grid-column:1/-1}.slots{grid-template-columns:repeat(2,1fr)}.stat-strip{grid-template-columns:repeat(2,1fr)}.help-grid{grid-template-columns:1fr}.modal{padding:8px}.modal-panel{border-radius:22px 22px 0 0;max-height:92vh}.mini-trade,.modal-trades>div{grid-template-columns:auto 75px 1fr}.header-actions{gap:5px}.install-app-btn{padding:8px 10px;font-size:11px}.icon-btn{width:38px;height:38px}.nav button{font-size:9px}.context-strip{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters select{flex:1;min-width:0}.chart{height:250px}}
 </style>
 </head><body>
 <div class="app">
 <header class="app-header"><div class="header-inner">
-  <div class="brand"><div class="brand-mark">IBS</div><div><div class="title">IBS 운용 도우미 <span class="version">v5.1 PWA</span></div><div class="sub">기본형과 추세형을 한 화면에서 기록하고 관리합니다.</div></div></div>
+  <div class="brand"><div class="brand-mark">IBS</div><div><div class="title">IBS 운용 도우미 <span class="version">v5.2 PWA</span></div><div class="sub">기본형과 추세형을 한 화면에서 기록하고 관리합니다.</div></div></div>
   <div class="header-actions"><button id="installAppBtn" class="btn blue compact install-app-btn hidden" type="button">앱 설치</button><button id="helpBtn" class="icon-btn" aria-label="도움말">?</button><button id="themeToggle" class="icon-btn" aria-label="테마 변경">☾</button><div class="pill" id="modePill">대기</div></div>
 </div></header>
 
@@ -138,10 +139,11 @@ details.rules{align-self:start}details.rules summary{cursor:pointer;font-weight:
 <section id="today" class="section">
   <div class="section-head"><div><h2>오늘 계산</h2><p>OHLC를 입력하면 오늘의 행동과 수량을 한 번에 보여줍니다.</p></div><button id="undoLastDayTop" class="btn ghost compact">마지막 기록 되돌리기</button></div>
   <div class="context-strip"><div><b id="todayContextTitle">현재 전략을 확인하세요</b><small id="todayContextDesc">사이클 중에는 전략이 고정됩니다.</small></div><span class="badge brand" id="todayDataStatus">데이터 확인 중</span></div>
+  <div id="missedSignalNotice" class="notice missed-notice hidden"></div>
   <div class="grid">
     <div class="card"><div class="card-title"><h3>1. 오늘 시장 데이터</h3><small>시가 · 고가 · 저가 · 종가</small></div>
       <div class="field"><label>날짜</label><input id="date" type="date"></div>
-      <div class="two"><div class="field"><label>시가</label><input id="open" inputmode="decimal" type="number" step="0.0001" placeholder="Open"></div><div class="field"><label>고가</label><input id="high" inputmode="decimal" type="number" step="0.0001" placeholder="High"></div><div class="field"><label>저가</label><input id="low" inputmode="decimal" type="number" step="0.0001" placeholder="Low"></div><div class="field"><label>종가 / 체결가</label><input id="close" inputmode="decimal" type="number" step="0.0001" placeholder="Close"></div></div>
+      <div class="two"><div class="field"><label>시가</label><input id="open" inputmode="decimal" type="number" step="0.0001" placeholder="Open"></div><div class="field"><label>고가</label><input id="high" inputmode="decimal" type="number" step="0.0001" placeholder="High"></div><div class="field"><label>저가</label><input id="low" inputmode="decimal" type="number" step="0.0001" placeholder="Low"></div><div class="field"><label>종가</label><input id="close" inputmode="decimal" type="number" step="0.0001" placeholder="Close"></div></div>
       <div class="quick-paste"><div class="field"><label>빠른 붙여넣기 <small>시가, 고가, 저가, 종가</small></label><input id="ohlcPaste" type="text" placeholder="예: 31.20, 32.10, 30.80, 31.65"></div><button id="applyPaste" class="btn light compact">적용</button><button id="clearInputs" class="btn ghost compact">비우기</button></div>
     </div>
     <div class="card"><div class="card-title"><h3>2. 운용 모드</h3><small>첫 매수 후 사이클 종료까지 고정</small></div>
@@ -155,7 +157,8 @@ details.rules{align-self:start}details.rules summary{cursor:pointer;font-weight:
   <div class="card result-card mt" id="calcResultCard"><div id="resultCardState" class="result-state wait"><div id="resultIcon" class="signal-icon">—</div><div><h3 id="resultTitle">계산 결과가 여기에 표시됩니다.</h3><p id="resultSubtitle">OHLC를 입력하고 계산 버튼을 누르세요.</p></div></div>
     <div class="gauge"><div class="gauge-head"><div><span class="label">오늘 IBS</span><div id="ibsGaugeValue" class="gauge-value">—</div></div><span id="ibsGaugeZone" class="gauge-zone wait">대기</span></div><div class="gauge-track"><span id="ibsGaugeMarker" class="gauge-marker"></span></div><div class="gauge-labels"><span>0</span><span>25 매수</span><span>75 매도</span><span>100</span></div></div>
     <div class="grid"><div><div class="row"><span class="label">IBS 원값</span><span class="value" id="rIbs">-</span></div><div class="row"><span class="label">오늘 행동</span><span class="value" id="rSignal">-</span></div><div class="row"><span class="label">사이클 상태</span><span class="value" id="rTrend">-</span></div><div class="row"><span class="label">판단 이유</span><span class="value" id="rReason">-</span></div></div><div><div class="row"><span class="label">적용 차수</span><span class="value" id="rSlot">-</span></div><div class="row"><span class="label">주문 예산</span><span class="value" id="rBudget">-</span></div><div class="row"><span class="label">주문 수량</span><span class="value" id="rQty">-</span></div><div class="row"><span class="label">예상 체결금액</span><span class="value" id="rAmount">-</span></div></div></div>
-    <div class="actions"><button class="btn primary" id="execute" disabled>이대로 체결 기록</button><button class="btn light" id="noTrade" disabled>거래 없이 오늘만 기록</button></div>
+    <div class="manual-callout"><b>종가와 실제 체결가는 분리됩니다.</b> 신호일에 종가와 다른 가격으로 체결했거나, 전일 매수 신호를 놓친 뒤 다음 날 실제로 매수했다면 <b>실제 체결 직접 입력</b>을 사용하세요. 수동 매수도 다음 차수를 1회 사용합니다.</div>
+    <div class="actions"><button class="btn primary" id="execute" disabled>신호대로 종가 체결</button><button class="btn blue" id="manualTrade" disabled>실제 체결 직접 입력</button><button class="btn light" id="noTrade" disabled>거래 없이 오늘만 기록</button></div>
   </div>
 </section>
 
@@ -184,11 +187,11 @@ details.rules{align-self:start}details.rules summary{cursor:pointer;font-weight:
 <section id="records" class="section"><div class="section-head"><div><h2>기록</h2><p>완료 사이클, 실제 체결, 과거 OHLC를 한곳에서 확인합니다.</p></div></div>
   <div class="stat-strip"><div class="stat-box"><small>사이클 승률</small><b id="statWinRate">-</b></div><div class="stat-box"><small>평균 수익률</small><b id="statAvgReturn">-</b></div><div class="stat-box"><small>최고 사이클</small><b id="statBestCycle">-</b></div><div class="stat-box"><small>최악 사이클</small><b id="statWorstCycle">-</b></div><div class="stat-box"><small>평균 기간</small><b id="statAvgDays">-</b></div></div>
   <div class="card"><div class="card-title"><h3>완료 사이클</h3><div class="filters"><select id="cycleFilterMode"><option value="all">전략 전체</option><option value="basic">기본형</option><option value="trend">추세형 전체</option><option value="trend-cycle">상승사이클만</option></select><select id="cycleFilterResult"><option value="all">승패 전체</option><option value="win">수익</option><option value="loss">손실</option></select></div></div><div class="table-wrap"><table><thead><tr><th>#</th><th>전략</th><th>구분</th><th>시작</th><th>종료</th><th>최대차수</th><th>쿼터</th><th>수익률</th><th>확정손익</th><th>상세</th></tr></thead><tbody id="cycleBody"></tbody></table></div></div>
-  <div class="card mt"><div class="card-title"><div><h3>거래 기록</h3><div class="small-muted">수량·체결단가를 수정하면 이후 현금, 평단, 사이클, 자산 그래프를 자동 재계산합니다.</div></div><div class="actions" style="margin:0"><button class="btn light compact" id="undoLastTradeEdit">최근 수정 되돌리기</button><button class="btn light compact" id="exportTrades">거래 CSV</button><button class="btn light compact" id="exportDaily">일별 CSV</button></div></div><div class="table-wrap"><table><thead><tr><th>사이클</th><th>날짜</th><th>구분</th><th>IBS</th><th>차수</th><th>수량</th><th>가격</th><th>금액</th><th>관리</th></tr></thead><tbody id="tradeBody"></tbody></table></div></div>
+  <div class="card mt"><div class="card-title"><div><h3>거래 기록</h3><div class="small-muted">수량·체결단가를 수정하면 이후 현금, 평단, 사이클, 자산 그래프를 자동 재계산합니다.</div></div><div class="actions" style="margin:0"><button class="btn light compact" id="undoLastTradeEdit">최근 수정 되돌리기</button><button class="btn light compact" id="exportTrades">거래 CSV</button><button class="btn light compact" id="exportDaily">일별 CSV</button></div></div><div class="table-wrap"><table><thead><tr><th>사이클</th><th>날짜</th><th>구분</th><th>출처</th><th>IBS</th><th>차수</th><th>수량</th><th>체결가</th><th>금액</th><th>관리</th></tr></thead><tbody id="tradeBody"></tbody></table></div><div class="table-scroll-hint">모바일에서는 표를 좌우로 밀어 상세 항목을 확인할 수 있습니다.</div></div>
   <div class="card mt"><div class="card-title"><div><h3>SOXL OHLC 기록</h3><div class="small-muted">앱에 입력했거나 CSV로 보강한 OHLC만 표시합니다. 거래 전 과거 데이터도 함께 볼 수 있습니다.</div></div><div class="market-toolbar"><select id="marketRange"><option value="30">최근 30일</option><option value="60" selected>최근 60일</option><option value="120">최근 120일</option><option value="all">전체</option></select><input id="marketSearch" type="search" placeholder="날짜 검색 YYYY-MM-DD"><button class="btn light compact" id="exportMarket">시장 CSV</button></div></div>
     <div class="market-summary"><div><small>전체 기록</small><b id="marketCount">0개</b></div><div><small>표시 기간</small><b id="marketDateRange">-</b></div><div><small>기간 최고가</small><b id="marketHigh">-</b></div><div><small>기간 최저가</small><b id="marketLow">-</b></div><div><small>최근 종가</small><b id="marketLastClose">-</b></div></div>
-    <canvas id="marketOhlcChart" class="chart market-chart"></canvas><div class="axis-note"><span>X축: 거래일</span><span>Y축: OHLC 가격 · 초록 상승 / 빨강 하락</span></div>
-    <div class="table-wrap mt"><table class="market-table"><thead><tr><th>날짜</th><th>시가</th><th>고가</th><th>저가</th><th>종가</th><th>IBS</th><th>신호</th><th>실제 거래</th><th>관리</th></tr></thead><tbody id="marketBody"></tbody></table></div>
+    <canvas id="marketOhlcChart" class="chart market-chart"></canvas><div class="axis-note"><span>X축: 거래일</span><span>Y축: OHLC 가격 · 점은 실제 체결</span></div>
+    <div class="table-wrap mt"><table class="market-table"><thead><tr><th>날짜</th><th>시가</th><th>고가</th><th>저가</th><th>종가</th><th>IBS</th><th>신호</th><th>실제 거래</th><th>관리</th></tr></thead><tbody id="marketBody"></tbody></table></div><div class="table-scroll-hint">날짜와 관리 버튼은 고정됩니다. 가운데 가격 항목은 좌우로 밀어 확인하세요.</div>
     <div class="market-pager"><button class="btn light compact" id="marketPrev">이전</button><span id="marketPageInfo">0 / 0</span><button class="btn light compact" id="marketNext">다음</button></div>
   </div>
 </section>
@@ -203,14 +206,25 @@ details.rules{align-self:start}details.rules summary{cursor:pointer;font-weight:
 
 <nav class="bottom"><div class="nav"><button class="active" data-tab="home"><span>⌂</span>현황</button><button data-tab="today"><span>＋</span>오늘</button><button data-tab="current"><span>◉</span>사이클</button><button data-tab="assets"><span>⌁</span>자산</button><button data-tab="records"><span>≡</span>기록</button><button data-tab="settings"><span>⚙</span>설정</button></div></nav>
 
-<div id="helpModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><h3>용어와 전략 도움말</h3><button class="icon-btn" data-close-modal="helpModal">×</button></div><div class="help-grid"><div class="help-box"><b>IBS</b><p>오늘 종가가 당일 고가와 저가 사이 어디에서 끝났는지 나타냅니다. 25 이하는 매수영역, 75 이상은 매도영역입니다.</p></div><div class="help-box"><b>기본 IBS</b><p>IBS 25 이하에서 최대 4번 나누어 사고, 75 이상에서 전량 정리합니다.</p></div><div class="help-box"><b>IBS 추세형</b><p>30일 고점 돌파가 확인된 상승사이클의 1·2차 상태에서는 일부만 매도해 상승을 더 길게 따라갑니다.</p></div><div class="help-box"><b>쿼터매도</b><p>현재 보유수량의 25%를 매도합니다. 매수차수는 줄어들지 않으며 매도대금은 이후 매수금 재계산에 포함됩니다.</p></div><div class="help-box"><b>평가자산 MDD</b><p>보유 중 미실현손익까지 포함해 이전 최고 평가자산에서 가장 크게 내려간 비율입니다.</p></div><div class="help-box"><b>확정자산 MDD</b><p>사이클 종료 후 확정된 자산만 이어서 계산한 최대낙폭입니다.</p></div><div class="help-box"><b>거래 기록 수정</b><p>기록 탭에서 매수·쿼터매도의 수량과 모든 거래의 체결단가를 수정할 수 있습니다. 이후 현금·평단·사이클 통계는 자동 재계산됩니다.</p></div><div class="help-box"><b>OHLC 기록</b><p>기록 탭에서 입력한 과거 가격을 캔들차트와 표로 볼 수 있습니다. 앱에 없는 과거 가격은 설정의 CSV 가져오기로 보강합니다.</p></div></div></div></div>
+<div id="helpModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><h3>용어와 전략 도움말</h3><button class="icon-btn" data-close-modal="helpModal">×</button></div><div class="help-grid"><div class="help-box"><b>IBS</b><p>오늘 종가가 당일 고가와 저가 사이 어디에서 끝났는지 나타냅니다. 25 이하는 매수영역, 75 이상은 매도영역입니다.</p></div><div class="help-box"><b>기본 IBS</b><p>IBS 25 이하에서 최대 4번 나누어 사고, 75 이상에서 전량 정리합니다.</p></div><div class="help-box"><b>IBS 추세형</b><p>30일 고점 돌파가 확인된 상승사이클의 1·2차 상태에서는 일부만 매도해 상승을 더 길게 따라갑니다.</p></div><div class="help-box"><b>쿼터매도</b><p>현재 보유수량의 25%를 매도합니다. 매수차수는 줄어들지 않으며 매도대금은 이후 매수금 재계산에 포함됩니다.</p></div><div class="help-box"><b>평가자산 MDD</b><p>보유 중 미실현손익까지 포함해 이전 최고 평가자산에서 가장 크게 내려간 비율입니다.</p></div><div class="help-box"><b>확정자산 MDD</b><p>사이클 종료 후 확정된 자산만 이어서 계산한 최대낙폭입니다.</p></div><div class="help-box"><b>실제 체결 직접 입력</b><p>전략 신호와 실제 거래를 분리해 기록합니다. 신호일 종가와 다른 체결가, 놓친 매수 신호의 다음 날 이월 매수, 임의 수량 체결을 기록할 수 있습니다.</p></div><div class="help-box"><b>거래 기록 수정</b><p>기록 탭에서 체결일·수량·체결단가와 메모를 수정할 수 있습니다. 이후 현금·평단·사이클 통계는 자동 재계산됩니다.</p></div><div class="help-box"><b>OHLC 기록</b><p>기록 탭에서 입력한 과거 가격을 캔들차트와 표로 볼 수 있습니다. 앱에 없는 과거 가격은 설정의 CSV 가져오기로 보강합니다.</p></div></div></div></div>
 <div id="cycleModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><h3 id="cycleModalTitle">사이클 상세</h3><button class="icon-btn" data-close-modal="cycleModal">×</button></div><div id="cycleModalBody"></div></div></div>
 <div id="tradeEditModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><h3>거래 기록 수정</h3><button class="icon-btn" data-close-modal="tradeEditModal">×</button></div>
   <div class="edit-grid"><div class="edit-static"><small>사이클 / 날짜</small><b id="editTradeMeta">-</b></div><div class="edit-static"><small>거래 구분</small><b id="editTradeSide">-</b></div></div>
-  <div class="edit-grid mt"><div class="field"><label>수량</label><input id="editTradeQty" type="number" min="1" step="1"></div><div class="field"><label>체결단가</label><input id="editTradePrice" type="number" min="0.0001" step="0.0001"></div></div>
+  <div class="edit-grid mt"><div class="field"><label>체결일</label><input id="editTradeDate" type="date"></div><div class="field"><label>수량</label><input id="editTradeQty" type="number" min="1" step="1"></div><div class="field"><label>체결단가</label><input id="editTradePrice" type="number" min="0.0001" step="0.0001"></div><div class="field"><label>메모</label><input id="editTradeMemo" type="text" maxlength="60" placeholder="예: 전일 신호 이월"></div></div>
   <div class="row"><span class="label">수정 후 체결금액</span><span class="edit-total" id="editTradeAmount">-</span></div>
   <div class="edit-note mt" id="editTradeNote"><b>주의:</b> 저장하면 이 거래 이후의 현금, 보유수량, 평단, 사이클 손익과 MDD가 모두 다시 계산됩니다.</div>
   <div class="actions"><button class="btn primary" id="saveTradeEdit">수정 저장</button><button class="btn light" data-close-modal="tradeEditModal">취소</button></div>
+</div></div>
+<div id="manualTradeModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><h3>실제 체결 직접 입력</h3><button class="icon-btn" data-close-modal="manualTradeModal">×</button></div>
+  <div class="manual-summary"><div><small>체결일</small><b id="manualTradeDate">-</b></div><div><small>전략 신호</small><b id="manualStrategySignal">-</b></div><div><small>당일 종가</small><b id="manualDayClose">-</b></div></div>
+  <div class="notice" id="manualTradeContextText">전략 신호와 별개로 실제 체결을 기록합니다.</div>
+  <div class="edit-grid mt"><div class="field"><label>실제 거래</label><select id="manualTradeSide"><option value="BUY">매수</option><option value="QSELL">쿼터/일부 매도</option><option value="SELL">전량매도</option></select></div><div class="field"><label>체결 사유</label><select id="manualTradeReason"><option value="carryover">이전 매수신호 이월</option><option value="price_adjust">신호대로 거래 · 체결가/수량 조정</option><option value="manual_buy">수동 추가 매수</option><option value="manual_sell">수동 매도</option><option value="other">기타</option></select></div><div class="field"><label>실제 체결가</label><input id="manualTradePrice" type="number" min="0.0001" step="0.0001"></div><div class="field"><label>실제 수량</label><input id="manualTradeQty" type="number" min="1" step="1"></div></div>
+  <div class="edit-grid"><div class="edit-static"><small>전략상 다음 매수예산</small><b id="manualTradeBudget">-</b></div><div class="edit-static"><small>권장수량</small><b id="manualTradeSuggestedQty">-</b></div></div>
+  <div class="actions"><button class="btn light compact" id="applySuggestedQty">권장수량 적용</button></div>
+  <div class="field mt"><label>메모 <small>선택사항</small></label><input id="manualTradeMemo" type="text" maxlength="60" placeholder="예: 8/6 매수신호를 놓쳐 다음 날 저가에서 체결"></div>
+  <div class="row"><span class="label">실제 체결금액</span><span class="edit-total" id="manualTradeAmount">-</span></div>
+  <div class="edit-note mt"><b>기록 방식:</b> 그날의 IBS·전략 신호는 그대로 보존하고, 실제 거래만 별도로 반영합니다. 매수는 현재의 다음 차수를 1회 사용하며 5차 매수는 허용하지 않습니다.</div>
+  <div class="actions"><button class="btn primary" id="saveManualTrade">실제 체결 저장</button><button class="btn light" data-close-modal="manualTradeModal">취소</button></div>
 </div></div>
 <div id="dailyEditModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><h3>OHLC 기록 수정</h3><button class="icon-btn" data-close-modal="dailyEditModal">×</button></div>
   <div class="edit-grid"><div class="edit-static"><small>날짜</small><b id="editDailyDate">-</b></div><div class="edit-static"><small>같은 날 실제 거래</small><b id="editDailyTrade">-</b></div></div>
@@ -233,14 +247,14 @@ const PLAN={
 };
 const Q2={lookback:30,activeDays:30,failDays:10,fourthIbs:.15,target:.20,quarter:.25};
 let pending=null;
-const EDIT_UNDO_KEY='ibs_trade_edit_undo_v51';
-let editingTradeId=null,editingDailyDate=null;
+const EDIT_UNDO_KEY='ibs_trade_edit_undo_v52';
+let editingTradeId=null,editingDailyDate=null,manualTradeContext=null;
 let marketPage=1;
 const MARKET_PAGE_SIZE=20;
 
 function fresh(){
   return{
-    v:5.1,symbol:'SOXL',currency:'KRW',initialCash:10000000,
+    v:5.2,symbol:'SOXL',currency:'KRW',initialCash:10000000,
     cash:10000000,shares:0,avgPrice:0,lastClose:0,
     selectedMode:'basic',currentMode:'',selectedPlan:'',currentPlan:'',
     cycleStartEquity:0,cycleStartDate:null,slotIndex:0,maxSlot:0,
@@ -255,7 +269,7 @@ function hydrate(raw){
   const base=fresh();
   const r=raw&&typeof raw==='object'?raw:{};
   const s=Object.assign(base,r);
-  s.v=5.1;
+  s.v=5.2;
   s.selectedMode=STRATEGY[s.selectedMode]?s.selectedMode:'basic';
   s.currentMode=STRATEGY[s.currentMode]?s.currentMode:(s.shares>0?'basic':'');
   if(!s.selectedPlan){
@@ -266,7 +280,7 @@ function hydrate(raw){
     s.currentPlan='';
   }
   if(s.shares>0&&!PLAN[s.currentPlan])s.currentPlan='equal';
-  s.trades=Array.isArray(s.trades)?s.trades.map(t=>Object.assign({mode:'basic'},t)):[];
+  s.trades=Array.isArray(s.trades)?s.trades.map(t=>Object.assign({mode:'basic',manual:false,manualReason:'',manualMemo:'',strategySignal:null},t)):[];
   s.daily=Array.isArray(s.daily)?s.daily.map(d=>Object.assign({mode:'basic',cycleTrend:false},d)):[];
   s.marketHistory=Array.isArray(s.marketHistory)?s.marketHistory.filter(r=>r&&r.date).map(r=>({...r,ibs:r.ibs==null?ibs(Number(r.high),Number(r.low),Number(r.close)):r.ibs,seedOnly:true})):[];
   s.cycles=Array.isArray(s.cycles)?s.cycles.map(c=>Object.assign({
@@ -526,7 +540,10 @@ function renderAssets(){
   $('aRMdd').textContent=pct(mdd(realizedSeries()));
 }
 
+function escHtml(v){return String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));}
 function tradeLabel(side){return side==='BUY'?'매수':side==='QSELL'?'쿼터매도':'전량매도';}
+function signalLabel(side){return side==='BUY'?'매수':side==='QSELL'?'25% 쿼터매도':side==='SELL'?'전량매도':'거래 없음';}
+function tradeSourceBadge(t){if(!t?.manual)return '<span class="source-pill auto">전략</span>';const carry=t.manualReason==='carryover';return `<span class="source-pill ${carry?'carry':'manual'}">${carry?'이월':'수동'}</span>`;}
 function renderTables(){
   $('cycleBody').innerHTML='';
   getFilteredCycles().sort((a,b)=>b.no-a.no).forEach(c=>{
@@ -540,7 +557,7 @@ function renderTables(){
   [...S.trades].sort((a,b)=>b.date.localeCompare(a.date)).forEach(t=>{
     const tr=document.createElement('tr');
     const cls=t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell';
-    tr.innerHTML=`<td>#${t.cycleNo??'-'}</td><td>${t.date}</td><td><span class="tag ${cls}">${tradeLabel(t.side)}</span></td><td>${t.ibs==null?'-':t.ibs.toFixed(3)}</td><td>${t.slot||'-'}</td><td>${Number(t.qty||0).toLocaleString()}</td><td>${money(t.price)}</td><td>${money(t.amount)}</td><td><div class="trade-actions"><button class="btn light" onclick="openTradeEdit('${t.id}')">수정</button><button class="btn danger" onclick="deleteTrade('${t.id}')">삭제</button></div></td>`;
+    tr.innerHTML=`<td>#${t.cycleNo??'-'}</td><td>${t.date}</td><td><span class="tag ${cls}">${tradeLabel(t.side)}</span></td><td title="${escHtml((t.manual?manualReasonLabel(t.manualReason):'전략 신호')+(t.manualMemo?' · '+t.manualMemo:''))}">${tradeSourceBadge(t)}</td><td>${t.ibs==null?'-':t.ibs.toFixed(3)}</td><td>${t.slot||'-'}</td><td>${Number(t.qty||0).toLocaleString()}</td><td>${money(t.price)}</td><td>${money(t.amount)}</td><td><div class="trade-actions"><button class="btn light" onclick="openTradeEdit('${t.id}')">체결 수정</button><button class="btn danger" onclick="deleteTrade('${t.id}')">삭제</button></div></td>`;
     $('tradeBody').appendChild(tr);
   });
   renderMarketHistory();
@@ -605,6 +622,7 @@ function calc(){
   $('rQty').textContent=signal==='WAIT'?'-':qty+'주';
   $('rAmount').textContent=signal==='WAIT'?'-':money(amount);
   $('execute').disabled=signal==='WAIT'||((signal==='BUY'||signal==='QSELL')&&qty===0);
+  $('manualTrade').disabled=false;
   $('noTrade').disabled=false;
   renderSignal();tab('today');
   requestAnimationFrame(()=>$('calcResultCard').scrollIntoView({behavior:'smooth',block:'start'}));
@@ -700,7 +718,7 @@ function noTrade(){
 
 function clearResult(){
   ['rIbs','rSignal','rTrend','rReason','rSlot','rBudget','rQty','rAmount'].forEach(id=>$(id).textContent='-');
-  $('execute').disabled=true;$('noTrade').disabled=true;
+  $('execute').disabled=true;$('manualTrade').disabled=true;$('noTrade').disabled=true;
 }
 
 function compactMoney(x){
@@ -752,8 +770,11 @@ function drawAll(){
 
 window.deleteTrade=id=>{
   const target=S.trades.find(t=>t.id===id);if(!target)return;
-  if(!confirm(`${target.date} 거래와 그 이후의 모든 기록을 삭제합니다. 계속할까요?`))return;
-  rebuildFromHistory(S.daily.filter(d=>d.date<target.date),S.trades.filter(t=>t.date<target.date));
+  if(!confirm(`${target.date} ${tradeLabel(target.side)} 거래만 삭제하고 이후 계좌 상태를 다시 계산할까요?\n\n이후 거래가 이 거래에 의존하면 삭제가 거부됩니다.`))return;
+  const backup=JSON.parse(JSON.stringify(S));saveEditUndoSnapshot(`${target.date} ${tradeLabel(target.side)} 삭제 전`);
+  const result=rebuildFromHistory(S.daily,S.trades.filter(t=>t.id!==id),{keepTab:true,silent:true});
+  if(!result.ok){localStorage.removeItem(EDIT_UNDO_KEY);S=hydrate(backup);save();render();return alert('이 거래만 삭제할 수 없습니다.\n\n'+result.error.message);}
+  tab('records');toast('거래만 삭제하고 이후 기록을 다시 계산했습니다.','success');
 };
 
 function applyDailySnapshot(d){
@@ -795,7 +816,7 @@ function rebuildFromHistory(dailyRows,tradeRows,options={}){
       const market=mode==='q2cap30'?previewQ2Market(d.close):null;
       if(market)commitQ2Market(market);
       if(mode==='q2cap30'&&S.shares>0&&market?.active)S.cycleTrend=true;
-      const p={d:d.date,o:d.open,h:d.high,l:d.low,c:d.close,i:ibs(d.high,d.low,d.close),signal:t?.side||d.signal||'WAIT',pk:plan,mode};
+      const p={d:d.date,o:d.open,h:d.high,l:d.low,c:d.close,i:ibs(d.high,d.low,d.close),signal:d.signal||t?.strategySignal||t?.side||'WAIT',pk:plan,mode};
 
       if(t?.side==='BUY'){
         if(S.slotIndex>=4)throw new Error(`${d.date} 매수는 이미 4차를 초과합니다.`);
@@ -808,17 +829,17 @@ function rebuildFromHistory(dailyRows,tradeRows,options={}){
         if(amount>S.cash+1e-6)throw new Error(`${t.date} 매수금 ${money(amount)}이 당시 현금 ${money(S.cash)}을 초과합니다.`);
         if(amount+1e-8<Math.min(b.budget,S.cash))S.underfilled++;
         const cost=S.avgPrice*S.shares;S.cash-=amount;S.shares+=t.qty;S.avgPrice=(cost+amount)/S.shares;S.slotIndex++;S.maxSlot=Math.max(S.maxSlot,S.slotIndex);
-        t={...t,amount,slot:S.slotIndex,cycleNo:S.cycleNo,mode:S.currentMode,plan:S.currentPlan,ibs:p.i};S.trades.push(t);recordDaily({...p,signal:'BUY'},'BUY');
+        t={...t,amount,slot:S.slotIndex,cycleNo:S.cycleNo,mode:S.currentMode,plan:S.currentPlan,ibs:p.i,strategySignal:t.strategySignal||p.signal};S.trades.push(t);recordDaily({...p,signal:p.signal},'BUY');
       }else if(t?.side==='QSELL'){
         if(S.shares<=0)throw new Error(`${t.date} 쿼터매도 전에 보유수량이 없습니다.`);
         if(t.qty>S.shares)throw new Error(`${t.date} 쿼터매도 수량 ${t.qty}주가 당시 보유수량 ${S.shares}주를 초과합니다.`);
         const amount=t.qty*t.price;S.cash+=amount;S.shares-=t.qty;S.cycleQuarterSells++;
-        t={...t,amount,slot:S.slotIndex,cycleNo:S.cycleNo,mode:S.currentMode||mode,plan:S.currentPlan,ibs:p.i};S.trades.push(t);recordDaily({...p,signal:'QSELL'},'QSELL');
+        t={...t,amount,slot:S.slotIndex,cycleNo:S.cycleNo,mode:S.currentMode||mode,plan:S.currentPlan,ibs:p.i,strategySignal:t.strategySignal||p.signal};S.trades.push(t);recordDaily({...p,signal:p.signal},'QSELL');
       }else if(t?.side==='SELL'){
         if(!S.cycleStartEquity||S.shares<=0)throw new Error(`${t.date} 전량매도 시점의 진행 중 사이클이 없습니다.`);
         const cycleNo=S.cycleNo,cycleMode=S.currentMode||mode,cyclePlan=S.currentPlan,startDate=S.cycleStartDate,startEquity=S.cycleStartEquity,maxSlot=S.maxSlot,trend=S.cycleTrend,q=S.cycleQuarterSells;
         const fullQty=S.shares,amount=fullQty*t.price;t={...t,qty:fullQty,amount,slot:null,cycleNo,mode:cycleMode,plan:cyclePlan,ibs:p.i};
-        S.trades.push(t);S.cash+=amount;S.shares=0;S.avgPrice=0;recordDaily({...p,signal:'SELL'},'SELL');
+        t={...t,strategySignal:t.strategySignal||p.signal};S.trades.push(t);S.cash+=amount;S.shares=0;S.avgPrice=0;recordDaily({...p,signal:p.signal},'SELL');
         const endEq=S.cash,pnl=endEq-startEquity;S.cycles.push({no:cycleNo,mode:cycleMode,modeName:strategyName(cycleMode),plan:cyclePlan,planName:cycleMode==='q2cap30'?'25% 시작 · 잔금 재계산':planName(cyclePlan),trendCycle:trend,quarterSells:q,startDate,endDate:t.date,maxSlot,pnl,returnRate:startEquity?pnl/startEquity:0,startEquity,endEquity:endEq,mdd:S.cycleMdd});
         if(cycleMode==='q2cap30')S.breakoutAnchor=recentHigh(Q2.lookback);S.cycleNo++;resetCycleState();
       }else{
@@ -845,8 +866,10 @@ window.openTradeEdit=id=>{
   editingTradeId=id;
   $('editTradeMeta').textContent=`#${t.cycleNo??'-'} · ${t.date}${t.slot?' · '+t.slot+'차':''}`;
   $('editTradeSide').textContent=tradeLabel(t.side);
+  $('editTradeDate').value=t.date;
   $('editTradeQty').value=t.qty;
   $('editTradePrice').value=t.price;
+  $('editTradeMemo').value=t.manualMemo||'';
   const full=t.side==='SELL';
   $('editTradeQty').disabled=full;
   $('editTradeNote').innerHTML=full
@@ -860,12 +883,15 @@ function updateTradeEditPreview(){
 }
 function saveTradeEdit(){
   const t=S.trades.find(x=>x.id===editingTradeId);if(!t)return;
+  const date=$('editTradeDate').value;
   const qty=t.side==='SELL'?Number(t.qty):Math.floor(Number($('editTradeQty').value));
   const price=Number($('editTradePrice').value);
-  if(!Number.isInteger(qty)||qty<=0||!Number.isFinite(price)||price<=0)return toast('수량과 체결단가를 확인하세요.','error');
+  const manualMemo=($('editTradeMemo').value||'').trim();
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isInteger(qty)||qty<=0||!Number.isFinite(price)||price<=0)return toast('체결일, 수량과 체결단가를 확인하세요.','error');
+  if(!S.daily.some(d=>d.date===date))return toast('체결일과 같은 날짜의 OHLC 기록이 필요합니다.','error');
   const backup=JSON.parse(JSON.stringify(S));
   saveEditUndoSnapshot(`${t.date} ${tradeLabel(t.side)} 수정 전`);
-  const trades=S.trades.map(x=>x.id===t.id?{...x,qty,price,amount:qty*price}:x);
+  const trades=S.trades.map(x=>x.id===t.id?{...x,date,qty,price,amount:qty*price,manualMemo}:x);
   const result=rebuildFromHistory(S.daily,trades,{keepTab:true,silent:true});
   if(!result.ok){
     localStorage.removeItem(EDIT_UNDO_KEY);S=hydrate(backup);save();render();
@@ -937,6 +963,7 @@ function drawOhlcChart(rows){
   for(let i=0;i<5;i++){const yy=T+plotH*i/4,v=hi-(hi-lo)*i/4;ctx.strokeStyle=grid;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(L,yy);ctx.lineTo(W-R,yy);ctx.stroke();ctx.fillStyle=muted;ctx.textAlign='right';ctx.fillText(compactPrice(v),L-6,yy);}
   const slot=plotW/view.length,body=Math.max(1.5,Math.min(9,slot*.58));
   view.forEach((d,i)=>{const o=Number(d.open),h=Number(d.high),l=Number(d.low),c=Number(d.close);if(![o,h,l,c].every(Number.isFinite))return;const xx=x(i),color=c>=o?up:down;ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(xx,y(h));ctx.lineTo(xx,y(l));ctx.stroke();const top=Math.min(y(o),y(c)),bottom=Math.max(y(o),y(c));ctx.fillRect(xx-body/2,top,body,Math.max(1.5,bottom-top));});
+  const tradeMap=new Map(S.trades.map(t=>[t.date,t]));view.forEach((d,i)=>{const t=tradeMap.get(d.date);if(!t)return;const xx=x(i),yy=Math.max(T+4,Math.min(T+plotH-4,y(Number(t.price))));ctx.beginPath();ctx.arc(xx,yy,3.8,0,Math.PI*2);ctx.fillStyle=t.side==='BUY'?up:t.side==='QSELL'?(styles.getPropertyValue('--amber').trim()||'#d97706'):down;ctx.fill();ctx.strokeStyle=styles.getPropertyValue('--surface').trim()||'#fff';ctx.lineWidth=1.5;ctx.stroke();});
   const idx=[0,Math.floor((view.length-1)/2),view.length-1].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);ctx.fillStyle=muted;ctx.textAlign='center';ctx.textBaseline='top';idx.forEach(i=>ctx.fillText(shortDate(view[i].date),x(i),H-B+8));
   if(rows.length>180){ctx.textAlign='right';ctx.fillText('차트는 최근 180개 기록 표시',W-R,T+3);}
 }
@@ -951,7 +978,7 @@ function renderMarketHistory(){
   drawOhlcChart(rangeRows);
   const rows=filteredMarketTableRows(),pages=Math.max(1,Math.ceil(rows.length/MARKET_PAGE_SIZE));marketPage=Math.min(Math.max(1,marketPage),pages);
   const pageRows=rows.slice((marketPage-1)*MARKET_PAGE_SIZE,marketPage*MARKET_PAGE_SIZE),tradeMap=new Map(S.trades.map(t=>[t.date,t]));
-  const body=$('marketBody');if(body){body.innerHTML=pageRows.length?pageRows.map(d=>{const t=tradeMap.get(d.date);const sig=d.ibs==null?'-':d.ibs<=.25?'매수영역':d.ibs>=.75?'매도영역':'대기';return `<tr><td>${d.date}</td><td>${compactPrice(d.open)}</td><td>${compactPrice(d.high)}</td><td>${compactPrice(d.low)}</td><td><b>${compactPrice(d.close)}</b></td><td>${d.ibs==null?'-':(d.ibs*100).toFixed(1)}</td><td>${sig}</td><td class="trade-cell">${t?`<span class="tag ${t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell'}">${tradeLabel(t.side)}</span>`:'-'}</td><td><div class="trade-actions"><button class="btn light" onclick="openDailyEdit('${d.date}')">수정</button></div></td></tr>`;}).join(''):'<tr><td colspan="9"><div class="market-empty">표시할 시장데이터가 없습니다.</div></td></tr>';}
+  const body=$('marketBody');if(body){body.innerHTML=pageRows.length?pageRows.map(d=>{const t=tradeMap.get(d.date),daily=S.daily.find(x=>x.date===d.date);const sig=daily?signalLabel(daily.signal):(d.ibs==null?'-':d.ibs<=.25?'매수영역':d.ibs>=.75?'매도영역':'대기');const actual=t?`<span class="tag ${t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell'}">${tradeLabel(t.side)}</span>${tradeSourceBadge(t)}`:(daily?.signal==='BUY'?'<span class="tag wait">매수신호 미체결</span>':'-');let actions='';if(daily){actions=`<button class="btn light" onclick="openDailyEdit('${d.date}')">OHLC</button>`+(t?`<button class="btn light" onclick="openTradeEdit('${t.id}')">체결</button>`:`<button class="btn blue" onclick="openHistoricalManualTrade('${d.date}')">거래 추가</button>`);}else{actions='<span class="small-muted">CSV 과거값</span>';}return `<tr><td>${d.date}</td><td>${compactPrice(d.open)}</td><td>${compactPrice(d.high)}</td><td>${compactPrice(d.low)}</td><td><b>${compactPrice(d.close)}</b></td><td>${d.ibs==null?'-':(d.ibs*100).toFixed(1)}</td><td>${sig}</td><td class="trade-cell">${actual}</td><td><div class="trade-actions">${actions}</div></td></tr>`;}).join(''):'<tr><td colspan="9"><div class="market-empty">표시할 시장데이터가 없습니다.</div></td></tr>';}
   $('marketPageInfo').textContent=rows.length?`${marketPage} / ${pages}`:'0 / 0';$('marketPrev').disabled=marketPage<=1||!rows.length;$('marketNext').disabled=marketPage>=pages||!rows.length;
 }
 
@@ -960,10 +987,11 @@ function csv(rows,cols){const e=v=>'"'+String(v??'').replaceAll('"','""')+'"';re
 
 
 /* =========================================================
-   v5.1 Editable records and OHLC history helpers
-   - Strategy logic is unchanged from v4.2.
-   - Adds clearer status, data readiness, glossary, filters,
-     market-data CSV seeding, last-day undo, and theme control.
+   v5.2 Manual execution, editable records and OHLC history helpers
+   - Core strategy signal logic is unchanged from v4.2.
+   - Separates strategy signals from actual executions.
+   - Allows delayed/manual fills, actual-price overrides, historical trade insertion,
+     editable records, OHLC history, and mobile table improvements.
    ========================================================= */
 const UI_PREF_KEY='ibs_multimode_ui_v43';
 function readUiPrefs(){
@@ -1033,7 +1061,7 @@ function renderRecentCycleTrades(){
   const box=$('recentCycleTrades');if(!box)return;
   const rows=S.trades.filter(t=>t.cycleNo===S.cycleNo).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,8);
   if(!rows.length){box.innerHTML='<div class="empty">현재 사이클의 거래가 아직 없습니다.</div>';return;}
-  box.innerHTML=rows.map(t=>`<div class="mini-trade"><span class="tag ${t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell'}">${tradeLabel(t.side)}</span><b>${t.date}</b><span>${t.qty.toLocaleString()}주 × ${money(t.price)}</span></div>`).join('');
+  box.innerHTML=rows.map(t=>`<div class="mini-trade"><span><span class="tag ${t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell'}">${tradeLabel(t.side)}</span>${tradeSourceBadge(t)}</span><b>${t.date}</b><span>${t.qty.toLocaleString()}주 × ${money(t.price)}</span></div>`).join('');
 }
 function renderCycleStats(){
   const rows=S.cycles;
@@ -1065,6 +1093,7 @@ function renderV43(){
   if($('todayDataStatus'))$('todayDataStatus').textContent=mode==='q2cap30'
     ?(count>=Q2.lookback?'30일 데이터 준비 완료':'30일 데이터 준비 중 · '+count+'/'+Q2.lookback)
     :'기본 IBS 모드';
+  const missed=latestUnfilledBuySignal();const missedBox=$('missedSignalNotice');if(missedBox){if(missed){missedBox.classList.remove('hidden');missedBox.innerHTML=`<strong>${missed.date} 매수 신호 미체결</strong><br>그날 매수를 놓쳤다가 이후 거래일에 실제로 매수했다면, 해당 날짜의 OHLC를 계산한 뒤 <b>실제 체결 직접 입력 → 이전 매수신호 이월</b>로 기록하세요.`;}else missedBox.classList.add('hidden');}
   if($('settingsDataCount'))$('settingsDataCount').textContent=count+'개';
   if($('settingsDataRange'))$('settingsDataRange').textContent=count?`${market[0].date} ~ ${market[market.length-1].date}`:'-';
   if($('settingsLastDate'))$('settingsLastDate').textContent=last?.date||'-';
@@ -1105,6 +1134,111 @@ function renderSignalV43(){
   if($('resultSubtitle'))$('resultSubtitle').textContent=pending?.reason||'OHLC를 입력하고 계산 버튼을 누르세요.';
   renderGauge();
 }
+function latestUnfilledBuySignal(){
+  const rows=sortedDaily();
+  for(let i=rows.length-1;i>=0;i--){
+    const d=rows[i];
+    if(d.signal==='BUY'&&d.tradeSide!=='BUY')return d;
+    if(d.tradeSide==='BUY'||d.tradeSide==='SELL')break;
+  }
+  return null;
+}
+function manualReasonLabel(v){return v==='carryover'?'이전 매수신호 이월':v==='price_adjust'?'신호 체결가/수량 조정':v==='manual_buy'?'수동 추가 매수':v==='manual_sell'?'수동 매도':'기타';}
+function openManualTradeBase(ctx){
+  manualTradeContext=ctx;
+  const isToday=ctx.kind==='today',p=isToday?ctx.p:null,d=isToday?{date:p.d,close:p.c,low:p.l,high:p.h,signal:p.signal,mode:p.mode,plan:p.pk,cash:S.cash,shares:S.shares,slotIndex:S.slotIndex}:ctx.d;
+  $('manualTradeDate').textContent=d.date;
+  $('manualStrategySignal').textContent=signalLabel(d.signal||'WAIT');
+  $('manualDayClose').textContent=money(d.close);
+  let side=(d.signal&&d.signal!=='WAIT')?d.signal:'BUY';if(side==='QSELL'&&Number(d.shares??S.shares)<=0)side='BUY';if(side==='SELL'&&Number(d.shares??S.shares)<=0)side='BUY';
+  $('manualTradeSide').value=side;
+  const missed=latestUnfilledBuySignal();
+  $('manualTradeReason').value=(side==='BUY'&&missed&&missed.date<d.date)?'carryover':(d.signal===side&&d.signal!=='WAIT'?'price_adjust':side==='BUY'?'manual_buy':'manual_sell');
+  $('manualTradePrice').value=Number(d.close||0);
+  $('manualTradeQty').value='';
+  $('manualTradeMemo').value='';
+  $('manualTradeContextText').textContent=isToday
+    ?'오늘의 전략 신호는 그대로 두고 실제 체결가·수량만 별도로 기록합니다.'
+    :'이미 저장된 OHLC의 전략 신호는 그대로 두고, 그 날짜에 실제로 있었던 거래를 추가합니다. 저장 후 이후 계좌 상태를 모두 다시 계산합니다.';
+  updateManualTradePreview(true);openModal('manualTradeModal');
+}
+function openTodayManualTrade(){if(!pending)return toast('먼저 오늘의 주문을 계산하세요.','warn');openManualTradeBase({kind:'today',p:pending});}
+window.openHistoricalManualTrade=date=>{
+  const d=S.daily.find(x=>x.date===date);if(!d)return toast('직접 기록한 OHLC 날짜에만 거래를 추가할 수 있습니다.','warn');
+  const t=S.trades.find(x=>x.date===date);if(t)return openTradeEdit(t.id);
+  openManualTradeBase({kind:'history',d});
+};
+function manualContextState(){
+  if(!manualTradeContext)return null;
+  if(manualTradeContext.kind==='today')return{cash:S.cash,shares:S.shares,slotIndex:S.slotIndex,mode:pending?.mode||effectiveMode(),plan:pending?.pk||effectivePlan(),close:pending?.c||S.lastClose};
+  const d=manualTradeContext.d;return{cash:Number(d.cash||0),shares:Number(d.shares||0),slotIndex:Number(d.slotIndex||0),mode:d.mode||'basic',plan:d.plan||'',close:Number(d.close||0)};
+}
+function updateManualTradePreview(fillQty=false){
+  const st=manualContextState();if(!st)return;
+  const side=$('manualTradeSide').value,price=Number($('manualTradePrice').value||0);let suggested=0,budget=null;
+  if(side==='BUY'){
+    if(manualTradeContext.kind==='today'&&st.slotIndex<4){const b=buyBudget(st.mode,st.plan,st.close,st.slotIndex);budget=Math.min(b.budget,st.cash);suggested=price>0?Math.floor(budget/price):0;}
+  }else if(side==='QSELL')suggested=Math.floor(st.shares*Q2.quarter);
+  else if(side==='SELL')suggested=Math.floor(st.shares);
+  $('manualTradeBudget').textContent=side==='BUY'?(budget==null?'과거 기록 · 실제 수량 직접 입력':money(budget)):'해당 없음';
+  $('manualTradeSuggestedQty').textContent=suggested>0?suggested.toLocaleString()+'주':'-';
+  $('applySuggestedQty').disabled=suggested<=0;
+  $('manualTradeQty').disabled=side==='SELL';
+  if(fillQty&&suggested>0)$('manualTradeQty').value=suggested;
+  if(side==='SELL'&&suggested>0)$('manualTradeQty').value=suggested;
+  const qty=Math.floor(Number($('manualTradeQty').value||0));$('manualTradeAmount').textContent=price>0&&qty>0?money(price*qty):'-';
+}
+function manualTradeMeta(signal){return{manual:true,manualReason:$('manualTradeReason').value,manualMemo:($('manualTradeMemo').value||'').trim(),strategySignal:signal||'WAIT'};}
+function validateManualPriceAgainstDay(price,low,high){
+  if(price>=low-tol(price,low)&&price<=high+tol(price,high))return true;
+  return confirm(`실제 체결가 ${money(price)}가 입력한 당일 저가 ${money(low)} ~ 고가 ${money(high)} 범위 밖입니다.\n\n시간외 체결·데이터 보정 등 실제 사유가 있다면 그대로 저장할 수 있습니다. 계속할까요?`);
+}
+function executeManualToday(){
+  const p=pending;if(!p)return;
+  const side=$('manualTradeSide').value,price=Number($('manualTradePrice').value),enteredQty=Math.floor(Number($('manualTradeQty').value));
+  if(!['BUY','QSELL','SELL'].includes(side)||!Number.isFinite(price)||price<=0)return toast('실제 거래와 체결가를 확인하세요.','error');
+  if(!validateManualPriceAgainstDay(price,p.l,p.h))return;
+  let qty=side==='SELL'?S.shares:enteredQty;if(!Number.isInteger(qty)||qty<=0)return toast('실제 체결수량을 확인하세요.','error');
+  if(side==='BUY'&&S.slotIndex>=4)return toast('현재 사이클은 이미 4차 매수까지 완료했습니다.','error');
+  if((side==='QSELL'||side==='SELL')&&S.shares<=0)return toast('매도할 보유수량이 없습니다.','error');
+  if(side==='QSELL'&&qty>S.shares)return toast('매도수량이 현재 보유수량을 초과합니다.','error');
+  if(side==='BUY'&&p.mode==='basic'&&!p.pk)return toast('기본형 매수 비중을 먼저 선택하세요.','error');
+  const meta=manualTradeMeta(p.signal),amount=qty*price;
+  if(side==='BUY'){
+    if(amount>S.cash+1e-8)return toast(`매수금 ${money(amount)}이 현재 현금 ${money(S.cash)}을 초과합니다.`,'error');
+    const b=buyBudget(p.mode,p.pk,p.c),planned=Math.min(b.budget,S.cash);
+    if(planned>0&&amount>planned+Math.max(.01,planned*0.001)&&!confirm(`실제 매수금 ${money(amount)}이 전략상 다음 매수예산 ${money(planned)}보다 큽니다.\n\n전략을 벗어난 실제 체결로 기록할까요?`))return;
+  }
+  if(p.mode==='q2cap30'){commitQ2Market(p.market);if(S.shares>0&&p.cycleTrendNext)S.cycleTrend=true;}
+  if(side==='BUY'){
+    if(S.slotIndex===0){S.currentMode=p.mode;S.currentPlan=p.mode==='basic'?p.pk:'equal';S.cycleStartEquity=eq(p.c);S.cycleStartDate=p.d;S.cyclePeak=S.cycleStartEquity;S.cycleMdd=0;S.holdingDays=0;S.maxSlot=0;S.cycleQuarterSells=0;S.cycleTrend=p.mode==='q2cap30'&&Boolean(p.market?.active);}
+    const planned=Math.min(buyBudget(S.currentMode,S.currentPlan,p.c).budget,S.cash);if(amount+1e-8<planned)S.underfilled++;
+    const cost=S.avgPrice*S.shares;S.cash-=amount;S.shares+=qty;S.avgPrice=(cost+amount)/S.shares;S.slotIndex++;S.maxSlot=Math.max(S.maxSlot,S.slotIndex);
+    S.trades.push({id:uid(),cycleNo:S.cycleNo,date:p.d,side:'BUY',ibs:p.i,slot:S.slotIndex,qty,price,amount,plan:S.currentPlan,mode:S.currentMode,...meta});recordDaily({...p,signal:p.signal},'BUY');
+  }else if(side==='QSELL'){
+    const proceeds=qty*price;S.cash+=proceeds;S.shares-=qty;S.cycleQuarterSells++;S.trades.push({id:uid(),cycleNo:S.cycleNo,date:p.d,side:'QSELL',ibs:p.i,slot:S.slotIndex,qty,price,amount:proceeds,plan:S.currentPlan,mode:S.currentMode,...meta});recordDaily({...p,signal:p.signal},'QSELL');
+  }else{
+    const cycleNo=S.cycleNo,cyclePlan=S.currentPlan,cycleMode=S.currentMode||p.mode,cycleStartDate=S.cycleStartDate,cycleStartEquity=S.cycleStartEquity,cycleMaxSlot=S.maxSlot,cycleTrend=S.cycleTrend,quarterSells=S.cycleQuarterSells;
+    if(!cycleStartEquity)return toast('진행 중인 사이클이 없어 전량매도를 기록할 수 없습니다.','error');
+    const proceeds=qty*price;S.trades.push({id:uid(),cycleNo,date:p.d,side:'SELL',ibs:p.i,slot:null,qty,price,amount:proceeds,plan:cyclePlan,mode:cycleMode,...meta});S.cash+=proceeds;S.shares=0;S.avgPrice=0;recordDaily({...p,signal:p.signal},'SELL');
+    const endEq=S.cash,pnl=endEq-cycleStartEquity;S.cycles.push({no:cycleNo,mode:cycleMode,modeName:strategyName(cycleMode),plan:cyclePlan,planName:cycleMode==='q2cap30'?'25% 시작 · 잔금 재계산':planName(cyclePlan),trendCycle:cycleTrend,quarterSells,startDate:cycleStartDate,endDate:p.d,maxSlot:cycleMaxSlot,pnl,returnRate:cycleStartEquity?pnl/cycleStartEquity:0,startEquity:cycleStartEquity,endEquity:endEq,mdd:S.cycleMdd});if(cycleMode==='q2cap30')S.breakoutAnchor=recentHigh(Q2.lookback);S.cycleNo++;resetCycleState();
+  }
+  save();closeModal('manualTradeModal');manualTradeContext=null;pending=null;clearResult();render();tab(side==='SELL'?'assets':'current');toast(`${tradeLabel(side)} 실제 체결을 ${money(price)}에 기록했습니다.`,'success');
+}
+function saveHistoricalManualTrade(){
+  const d=manualTradeContext?.d;if(!d)return;
+  if(S.trades.some(t=>t.date===d.date))return toast('이 날짜에는 이미 실제 거래가 있습니다. 기존 거래를 수정하세요.','warn');
+  const side=$('manualTradeSide').value,price=Number($('manualTradePrice').value),qty=Math.floor(Number($('manualTradeQty').value));
+  if(!['BUY','QSELL','SELL'].includes(side)||!Number.isFinite(price)||price<=0||!Number.isInteger(qty)||qty<=0)return toast('실제 거래, 수량, 체결가를 확인하세요.','error');
+  if(!validateManualPriceAgainstDay(price,Number(d.low),Number(d.high)))return;
+  const newTrade={id:uid(),date:d.date,side,qty,price,amount:qty*price,mode:d.mode||'basic',plan:d.plan||'',...manualTradeMeta(d.signal)};
+  const backup=JSON.parse(JSON.stringify(S));saveEditUndoSnapshot(`${d.date} 수동 거래 추가 전`);
+  const result=rebuildFromHistory(S.daily,[...S.trades,newTrade],{keepTab:true,silent:true});
+  if(!result.ok){localStorage.removeItem(EDIT_UNDO_KEY);S=hydrate(backup);save();render();return alert('이 거래를 추가할 수 없습니다.\n\n'+result.error.message);}
+  closeModal('manualTradeModal');manualTradeContext=null;refreshEditUndoButton();tab('records');toast(`${d.date} 실제 거래를 추가하고 이후 자산을 다시 계산했습니다.`,'success');
+}
+function saveManualTrade(){if(!manualTradeContext)return;if(manualTradeContext.kind==='today')executeManualToday();else saveHistoricalManualTrade();}
+
 function parseOhlcPaste(){
   const raw=$('ohlcPaste')?.value.trim();if(!raw)return toast('붙여넣을 OHLC 값을 입력하세요.','warn');
   const parts=raw.split(/[\s,;|]+/).filter(Boolean);
@@ -1190,7 +1324,7 @@ window.showCycle=no=>{
       <div><small>사이클 MDD</small><b class="neg">${pct(c.mdd)}</b></div>
       <div><small>기간</small><b>${daysBetween(c.startDate,c.endDate)}일</b></div>
     </div>
-    <div class="modal-trades">${trades.map(t=>`<div><span class="tag ${t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell'}">${tradeLabel(t.side)}</span><b>${t.date}</b><span>${t.slot?t.slot+'차 · ':''}${t.qty.toLocaleString()}주 × ${money(t.price)}</span></div>`).join('')||'<div class="empty">거래 내역이 없습니다.</div>'}</div>`;
+    <div class="modal-trades">${trades.map(t=>`<div><span><span class="tag ${t.side==='BUY'?'buy':t.side==='QSELL'?'qsell':'sell'}">${tradeLabel(t.side)}</span>${tradeSourceBadge(t)}</span><b>${t.date}</b><span>${t.slot?t.slot+'차 · ':''}${t.qty.toLocaleString()}주 × ${money(t.price)}${t.manualMemo?' · '+escHtml(t.manualMemo):''}</span></div>`).join('')||'<div class="empty">거래 내역이 없습니다.</div>'}</div>`;
   openModal('cycleModal');
 };
 
@@ -1214,6 +1348,12 @@ $('cycleFilterMode').onchange=()=>{renderTables();renderV43();};
 $('cycleFilterResult').onchange=()=>{renderTables();renderV43();};
 $('editTradeQty').oninput=updateTradeEditPreview;
 $('editTradePrice').oninput=updateTradeEditPreview;
+$('manualTrade').onclick=openTodayManualTrade;
+$('manualTradeSide').onchange=()=>updateManualTradePreview(true);
+$('manualTradePrice').oninput=()=>updateManualTradePreview(false);
+$('manualTradeQty').oninput=()=>updateManualTradePreview(false);
+$('applySuggestedQty').onclick=()=>updateManualTradePreview(true);
+$('saveManualTrade').onclick=saveManualTrade;
 $('saveTradeEdit').onclick=saveTradeEdit;
 $('saveDailyEdit').onclick=saveDailyEdit;
 for(const id of ['editDailyHigh','editDailyLow','editDailyClose'])$(id).oninput=updateDailyEditPreview;
@@ -1240,13 +1380,13 @@ $('init').onclick=()=>{
   if(initialCash<=0)return alert('초기 현금은 0보다 커야 합니다.');
   S=fresh();S.symbol=symbol;S.currency=currency;S.initialCash=initialCash;S.cash=initialCash;save();render();tab('home');
 };
-$('backup').onclick=()=>dl('IBS_multimode_v5_1_backup_'+today()+'.json',JSON.stringify(S,null,2),'application/json');
+$('backup').onclick=()=>dl('IBS_multimode_v5_2_backup_'+today()+'.json',JSON.stringify(S,null,2),'application/json');
 $('restore').onchange=e=>{
   const f=e.target.files[0];if(!f)return;const r=new FileReader();
   r.onload=()=>{try{const restored=JSON.parse(r.result);if(!restored||Number(restored.v)<3)return alert('지원하지 않는 백업 파일입니다. v3 이상 백업만 복원할 수 있습니다.');S=hydrate(restored);save();render();alert('복원했습니다.');}catch(x){alert('백업 파일을 확인하세요.');}};r.readAsText(f);
 };
 $('reset').onclick=()=>{if(confirm('모든 기록을 삭제할까요?')){const cfg={symbol:S.symbol,currency:S.currency,initialCash:S.initialCash};S=fresh();Object.assign(S,cfg,{cash:cfg.initialCash});save();render();}};
-$('exportTrades').onclick=()=>dl('IBS_multimode_trades.csv',csv(S.trades,['cycleNo','date','side','ibs','slot','qty','price','amount','mode','plan']),'text/csv');
+$('exportTrades').onclick=()=>dl('IBS_multimode_trades.csv',csv(S.trades,['cycleNo','date','side','manual','manualReason','manualMemo','strategySignal','ibs','slot','qty','price','amount','mode','plan']),'text/csv');
 $('exportDaily').onclick=()=>dl('IBS_multimode_daily.csv',csv(S.daily,['date','open','high','low','close','ibs','signal','tradeSide','cash','shares','avgPrice','equity','slotIndex','mode','plan','cycleTrend','marketAnchor','breakoutLine','trendActive','trendActiveLeft','trendBelowCount','cycleNo']),'text/csv');
 $('exportMarket').onclick=()=>dl('IBS_market_OHLC.csv',csv(marketRows(),['date','open','high','low','close','ibs','seedOnly']),'text/csv');
 
