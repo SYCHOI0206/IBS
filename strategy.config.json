@@ -1,0 +1,17 @@
+{
+  "strategy_id": "IBS_RG100_DELAY",
+  "display_name": "IBS RG100-delay",
+  "version": "1.0",
+  "symbol": "SOXL",
+  "ohlc_adjustment": "split_adjusted",
+  "ibs": {"formula": "(close-low)/(high-low)", "buy_lte": 0.25, "sell_gte": 0.75, "high_equals_low": "NO_SIGNAL"},
+  "proxy": {"seed": 100, "a_return": "1+(soxl_gross_return-1)/3", "b_return": "soxl_gross_return^(1/3)", "sma_short": 50, "sma_long": 200, "bull": "a>a200 OR b>b200", "strong": "a>a200 AND a50>a200 AND b>b200 AND b50>b200", "deep": "a/a200<0.86 OR b/b200<0.86", "warmup_closes": 201},
+  "plans": {"STRONG": [0.35,0.30,0.20,0.15], "BULL": [0.30,0.27,0.23,0.20], "BEAR": [0.20,0.20,0.20,0.20]},
+  "budget": "cycle_start_equity_times_frozen_entry_plan",
+  "qsell": {"entry_strong_only": true, "slot_lte": 2, "ibs_gte": 0.75, "close_gte_avg": true, "close_lt_avg_times": 1.25, "fraction": 0.25, "max_per_cycle": 1},
+  "full_target": {"entry_strong_slot_lte_2_close_gte_avg_times": 1.25},
+  "deep_trim": {"slot_gte": 2, "close_lte_avg_times": 0.97, "fraction": 0.05, "max_per_cycle": 1},
+  "delay": {"requires_actual_qsell": true, "reference": "official_regular_close_on_qsell_signal_day", "continuation": "any_later_official_close_strictly_greater_than_reference", "trigger": "slot_2_first_ibs_lte_0.25_after_continuation", "due": "next_entered_us_trading_day", "due_day_ibs_required": false, "sell_blocks_buy": true, "roll_to_d_plus_2": false, "max_per_cycle": 1, "slot_4_delay": false},
+  "priority": ["DEEP_TRIM","SELL_OR_QSELL_OR_FULL_SELL","DELAYED_3RD_BUY","NORMAL_IBS_BUY"],
+  "execution": {"research": "official_close", "live": "after_market_adapter", "integer_shares": "floor", "same_day_rebuy_after_sell": false}
+}
