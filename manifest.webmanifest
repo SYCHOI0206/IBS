@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "IBS 운용 도우미",
-  "short_name": "IBS 도우미",
-  "description": "IBS 기본형과 추세형의 신호·사이클·자산을 기록하고, 전략 신호와 실제 체결을 분리하고, 수동·이월 체결 기록과 거래 수정, 과거 OHLC 차트를 지원하는 설치형 웹앱",
+  "name": "IBS RG100-delay 운용 도우미",
+  "short_name": "RG100-delay",
+  "description": "SOXL IBS RG100-delay v1.0 신호·상태·체결 기록용 설치형 웹앱",
   "lang": "ko-KR",
   "start_url": "./",
   "scope": "./",
