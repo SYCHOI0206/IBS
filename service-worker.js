@@ -1,8 +1,9 @@
-const CACHE_NAME='ibs-pwa-v5.2.0';
+const CACHE_NAME='ibs-rg100-delay-v1.0.0';
 const APP_SHELL=[
   './',
   './index.html',
   './manifest.webmanifest',
+  './strategy.config.json',
   './icon-192.png',
   './icon-512.png',
   './icon-maskable-192.png',
